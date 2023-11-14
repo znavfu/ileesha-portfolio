@@ -1,14 +1,42 @@
 <html>
-  <head>
-    <title>Ileesha Kumar - Portfolio</title>
-  </head>
-  <body style="padding:0;margin:0;border:0">
-    <iframe
-      style="border:0"
-      height="100%"
-      width="100%"
-      src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fico0xtdCUhhRO1I87UFmzh%2FPortfolio%3Fnode-id%3D42-198%26starting-point-node-id%3D42%253A198%26scaling%3Dscale-down-width%26hotspot-hints%3D0%26mode%3Ddesign%26t%3DKEqxKMmq2MG3tsFl-1&hide-ui=1"
-      allowfullscreen>
-      </iframe>
-  </body>
+<head>
+  <title>Ileesha Kumar - Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+</head>
+<body style="padding:0;margin:0;border:0">
+  <form id="passform" style="margin-bottom:0">
+    <input id="passfield" type="hidden" name="p" />
+  </form>
+  <iframe
+    id="portfolio-webview"
+    style="border:0;display:none"
+    height="100%"
+    width="100%"
+    src=""
+    allowfullscreen>
+  </iframe>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const pass = urlParams.get('p');
+  var passhash = CryptoJS.MD5(pass).toString();
+  console.log(passhash);
+  if (passhash === '5dafdee9abd354cc54d465fdc0d1be0d') {
+    $('#passfield').attr('type', 'hidden');
+    $('#portfolio-webview').css({
+      'display': 'initial'
+    });
+    $('#portfolio-webview').attr('src', 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fico0xtdCUhhRO1I87UFmzh%2FPortfolio%3Fnode-id%3D42-198%26starting-point-node-id%3D42%253A198%26scaling%3Dscale-down-width%26hotspot-hints%3D0%26mode%3Ddesign%26t%3DKEqxKMmq2MG3tsFl-1&hide-ui=1');
+  } else {
+    $('#passfield').attr('type', 'password');
+  }
+
+  $("#passfield").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      $('#passform').submit();
+    }
+  });
+</script>
+</body>
 </html>
