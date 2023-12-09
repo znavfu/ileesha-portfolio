@@ -1,42 +1,85 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Ileesha Kumar - Portfolio</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <meta charset="UTF-8">
+    <title>Ileesha Kumar - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+          integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+            integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@400;700&family=Source+Sans+3:wght@300;400&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="default.css"/>
+    <script src="default.js"></script>
 </head>
-<body style="padding:0;margin:0;border:0">
-  <form id="passform" style="margin-bottom:0">
-    <input id="passfield" type="hidden" name="p" />
-  </form>
-  <iframe
-    id="portfolio-webview"
-    style="border:0;display:none"
-    height="100%"
-    width="100%"
-    src=""
-    allowfullscreen>
-  </iframe>
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const pass = urlParams.get('p');
-  var passhash = CryptoJS.MD5(pass).toString();
-  console.log(passhash);
-  if (passhash === '5dafdee9abd354cc54d465fdc0d1be0d') {
-    $('#passfield').attr('type', 'hidden');
-    $('#portfolio-webview').css({
-      'display': 'initial'
-    });
-    $('#portfolio-webview').attr('src', 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fico0xtdCUhhRO1I87UFmzh%2FPortfolio%3Fnode-id%3D42-198%26starting-point-node-id%3D42%253A198%26scaling%3Dscale-down-width%26hotspot-hints%3D0%26mode%3Ddesign%26t%3DKEqxKMmq2MG3tsFl-1&hide-ui=1');
-  } else {
-    $('#passfield').attr('type', 'password');
-  }
-
-  $("#passfield").on('keyup', function (e) {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-      $('#passform').submit();
-    }
-  });
-</script>
+<body>
+<div class="ui fixed menu">
+    <div class="ui container">
+        <a href="#" class="header item">
+            Ileesha Kumar
+        </a>
+        <a href="#" class="item right">Resume</a>
+    </div>
+</div>
+<div class="ui container page">
+    <div class="about section">
+        <div class="section-column">
+            <div class="section-title">
+                <div>Hi! I'm Ileesha,</div>
+            </div>
+            <div class="section-content">
+                a Seattle-based <strong>Product</strong> enthusiast currently pursuing MBA from UW Foster School of Business. I have 5 years
+                of experience leading multi-disciplinary design teams and creating <strong>user-centered digital solutions, services and
+                brands</strong> related to lifestyle & technology. I focus on driving <strong>design strategy</strong> to align team
+                objectives with business requirements while creating solutions <strong>that look and feel amazing!</strong>
+            </div>
+            <div class="section-content">
+                <div class="tags">
+                    <div class="tag purple">Marketing & Advertising</div>
+                    <div class="tag yellow">CX & UX</div>
+                    <div class="tag pink">MBA @ UW Foster School of Business</div>
+                    <div class="tag blue">ex-Deloitte</div>
+                </div>
+            </div>
+        </div>
+        <div class="section-column">
+            <img class="ilee-photo" src="ilee-photo.png" alt="">
+        </div>
+    </div>
+    <div class="work section">
+        <div class="section-column">
+            <div class="section-title">Work</div>
+            <div class="section-content">
+                View my recent projects on Figma. The prototypes are best suited for viewing on desktops.
+            </div>
+            <div class="section-content">
+                <div class="password-input ui action input">
+                    <input id="password-field" type="text" placeholder="Enter password">
+                    <button class="ui go-to-figma">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g id="figma" clip-path="url(#clip0_2_100)">
+                                <g id="Group">
+                                    <path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M7.075 0.955841H12.925C14.9417 0.955841 16.5833 2.55167 16.5833 4.4675C16.5833 5.5875 16.0217 6.59917 15.1517 7.24501C16.0217 7.89167 16.5833 8.90252 16.5833 10.0234C16.5833 11.9384 14.9417 13.5342 12.925 13.5342C12.1033 13.5342 11.3442 13.27 10.7333 12.8267V15.5783C10.7333 17.4942 9.0925 19.09 7.075 19.09C5.05834 19.09 3.41667 17.4942 3.41667 15.5783C3.41667 14.4583 3.97833 13.4475 4.84833 12.8008C3.97833 12.1542 3.41667 11.1434 3.41667 10.0234C3.41667 8.90252 3.97833 7.89167 4.84833 7.24501C3.97833 6.59917 3.41667 5.5875 3.41667 4.4675C3.41667 2.55167 5.05834 0.955841 7.075 0.955841ZM9.26666 13.5342H7.075C5.88334 13.5342 4.88333 14.4467 4.88333 15.5783C4.88333 16.7108 5.88334 17.6225 7.075 17.6225C8.2675 17.6225 9.26666 16.7108 9.26666 15.5783V13.5342ZM10.7333 10.0234C10.7333 8.89085 11.7325 7.97834 12.925 7.97834C14.1167 7.97834 15.1167 8.89085 15.1167 10.0234C15.1167 11.155 14.1167 12.0675 12.925 12.0675C11.7325 12.0675 10.7333 11.155 10.7333 10.0234ZM7.0475 7.97918C5.8675 7.99252 4.88333 8.90002 4.88333 10.0234C4.88333 11.155 5.88334 12.0675 7.075 12.0675H9.26666V7.97834H7.075L7.0475 7.97918ZM9.26666 6.51167V2.42333H7.075C5.88334 2.42333 4.88333 3.335 4.88333 4.4675C4.88333 5.6 5.88334 6.51167 7.075 6.51167H9.26666ZM10.7333 6.51167H12.925C14.1167 6.51167 15.1167 5.6 15.1167 4.4675C15.1167 3.335 14.1167 2.42333 12.925 2.42333H10.7333V6.51167Z" fill="white"/>
+                                </g>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2_100">
+                                    <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

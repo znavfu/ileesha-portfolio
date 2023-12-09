@@ -1,0 +1,141 @@
+body {
+    background: linear-gradient(180deg, #C2F6EA 0%, rgba(194, 246, 234, 0.00) 100%);
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.ui.menu {
+    background-color: #C2F6EA!important;
+    height: 64px;
+    font-family: 'Source Sans 3', sans-serif!important;
+    border-bottom: 2px solid #fff;
+    box-shadow: none;
+}
+
+.ui.menu .item {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400!important;
+    line-height: 140%; /* 28px */
+    font-family: 'Source Sans 3', sans-serif!important;
+    border: 0!important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ui.menu .item::before {
+    background: none!important;
+}
+
+.page {
+    margin-top: 64px;
+}
+
+.section {
+    padding-top: 50px;
+}
+
+.section-title {
+    font-family: 'Raleway';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    width: 72px;
+    border-bottom: 10px solid #FFD57C;
+}
+
+.section-title>div {
+    width: 100vw;
+    overflow-x: visible;
+}
+
+.section-content {
+    margin-top: 24px;
+    color: #000;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 28.8px */
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.ilee-photo {
+    height: 240px;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding-top: 8px;
+}
+
+.tags>.tag {
+    color: #000;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0;
+    border-bottom-width: 20px;
+    border-bottom-style: solid;
+    padding: 0 16px;
+}
+
+.tag.purple {
+    border-bottom-color: #D9DAFF;
+}
+
+.tag.yellow {
+    border-bottom-color: #f2d6a8;
+}
+
+.tag.pink {
+    border-bottom-color: #FFB8E3;
+}
+
+.tag.blue {
+    border-bottom-color: #B3D6FF;
+}
+
+.password-input {
+    color: #000;
+}
+
+.password-input>input {
+    border: 2px solid #212B2A!important;
+    border-radius: 100px!important;
+    line-height: 32px;
+    width: 178px;
+    border-right: 0 solid transparent !important;
+    height: 48px;
+}
+
+.password-input>.go-to-figma {
+    border: 2px solid #212B2A!important;
+    background-color: #212B2A;
+    border-radius: 0 100px 100px 0!important;
+    padding: 12px 14px!important;
+    cursor: pointer;
+    height: 48px;
+}
+
+.password-input>.go-to-figma:hover {
+    background-color: #212B2A;
+}
+
+input::placeholder {
+    color: #212B2A;
+    font-size: 16px;
+    opacity: 1; /* Firefox */
+}
