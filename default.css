@@ -63,6 +63,14 @@ body {
     line-height: 160%; /* 28.8px */
 }
 
+.section-content.hidden {
+    display: none;
+}
+
+.reach-out-for-password {
+    color: #212B2A;
+}
+
 .section {
     display: flex;
     flex-direction: row;

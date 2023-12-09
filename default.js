@@ -8,6 +8,7 @@ var goToFigma = function() {
             window.location.href = data;
         }
     }).fail(function() {
+        $('.reach-out-for-password').removeClass('hidden');
         $('#password-field').css({
             color: '#e74c3c'
         });
